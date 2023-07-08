@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/new-tweet.css">
 
     <!--Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -29,7 +30,7 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <div class="new-tweet">
+      <div class="newTweet">
       <span><b>Write</b> a new tweet</span>
       <i class="fa-solid fa-angles-down fa-bounce" style="color: #fb0404;"></i>
     </div>
@@ -46,7 +47,17 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>what are you humming about</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="POST">
+          <label class="tweet" for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea><br>
+          <div class="count">
+            <button type="submit" class="button">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
