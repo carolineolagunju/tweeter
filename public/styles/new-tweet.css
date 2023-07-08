@@ -1,0 +1,22 @@
+.count {
+  display: flex;
+  justify-content: space-between;
+  font-family: Bungee, cursive, sans-serif;
+  border-top: solid black;
+  padding-top: 20px;
+}
+
+.button {
+  background-color: navy;
+  color: #FFFFFF;
+}
+
+#tweet-text {
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+/* .tweet {
+  padding-bottom: 20px;
+} */
