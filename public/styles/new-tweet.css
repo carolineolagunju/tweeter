@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   font-family: Bungee, cursive, sans-serif;
-  border-top: solid black;
+  /* border-top: solid black; */
   padding-top: 20px;
 }
 
@@ -13,10 +13,13 @@
 
 #tweet-text {
   display: flex;
-  justify-content: flex-start;
-
+  justify-content: center;
+  border: none;
+  border-bottom: solid black;
+  outline: none;
+  width: 90vw;
+  bottom: 0;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: inherit;
 }
-
-/* .tweet {
-  padding-bottom: 20px;
-} */
