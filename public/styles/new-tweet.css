@@ -32,3 +32,11 @@
 h2 {
   font-size: 25px;
 }
+
+.counterRed {
+  color: red;
+}
+
+.counterBlack {
+  color: black;
+}
