@@ -1,21 +1,22 @@
 $(document).ready(function() {
 
-  //targeting textarea element and listening to keypress
-  $("textarea").keypress(function() {
+  //targeting textarea element and listening to input
+  $("textarea").on("input", function() {
 
     //fetching the current length of the text area
-    let currentLength = $(this).val().length + 1;
+    let currentLength = $(this).val().length;
     const maxLength = 140;
     const remainingLength = maxLength - currentLength;
 
-    //targeting the counter
-    const targetElement = $(".counter");
+    //targeting the counter using DOM transverse
+    const counter = $(this).parent().find(".counter");
+    counter.text(remainingLength);
 
     //checking if the length of char is <= the specified maxLength
     if (currentLength <= maxLength) {
-      targetElement.text(remainingLength);
-    } else if (currentLength > maxLength) {
-      targetElement.text(remainingLength).css("color", "red");
+      $(counter).removeClass("counterRed ").addClass("counterBlack");
+    } else {
+      $(counter).removeClass("counterBlack").addClass("counterRed");
     }
   });
 });
