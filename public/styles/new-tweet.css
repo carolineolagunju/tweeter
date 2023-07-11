@@ -30,7 +30,7 @@
 }
 
 h2 {
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .counterRed {
@@ -39,4 +39,61 @@ h2 {
 
 .counterBlack {
   color: black;
+}
+
+section.tweet-container {
+  border: 3px solid;
+  padding: 20px;
+  margin: 30px 0px;
+}
+
+section.tweet-container:hover {
+  box-shadow: 4px 4px 4px grey;
+
+}
+
+article > header, footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+article > header > span {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+article > hr {
+  height: 2px;
+  background-color: black;
+}
+
+article > p {
+  padding-top: 20px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+article > footer {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+}
+
+footer div.icons {
+  display: flex;
+}
+
+div.icons i {
+  padding: 6px;
+}
+
+div.icons i:hover {
+  color: orangered;
+}
+
+.username {
+  opacity: .6;
+  color: skyblue;
 }
