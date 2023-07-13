@@ -5,7 +5,7 @@
  */
 
 $(document).ready(function() {
-  //The tweet object
+  //The tweet array
   const tweetArr = [
     {
       "user": {
@@ -61,19 +61,14 @@ $(document).ready(function() {
   };
 
 
-
   const renderTweets = function(tweetArr) {
-    //setting a container where the tweets will be pushed into
-    let $tweets = [];
     //loop through arr of tweets Object
-    for (const tweetObj of tweetArr) {
-    //calling createTweetElement on each object to apply the html structure to the tweet
-      $tweets.push(createTweetElement(tweetObj));
+    for (const singleTweet of tweetArr) {
+    //calling createTweetElement on each object
+    const tweet = createTweetElement(singleTweet);
+    //append the tweet to the tweet container 
+    $("#tweet-container").append(tweet);
     }
-    return $tweets;
   };
-
-  //append the html structure to id tweet-container from index.html
-  const $tweets = renderTweets(tweetArr);
-  $("#tweet-container").append($tweets);
+  renderTweets(tweetArr);
 });
