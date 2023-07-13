@@ -6,19 +6,34 @@
 
 $(document).ready(function() {
   //The tweet object
-  const tweetData =  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png",
+  const tweetArr = [
+    {
+      "user": {
+        "name": "Newton",
+        "avatars": "https://i.imgur.com/73hZDYK.png"
+        ,
         "handle": "@SirIsaac"
       },
-    "content": {
+      "content": {
         "text": "If I have seen further it is by standing on the shoulders of giants"
       },
-    "created_at": 1461116232227
-  }
+      "created_at": 1461116232227
+    },
+    {
+      "user": {
+        "name": "Descartes",
+        "avatars": "https://i.imgur.com/nlhLi3I.png",
+        "handle": "@rd" },
+      "content": {
+        "text": "Je pense , donc je suis"
+      },
+      "created_at": 1461113959088
+    }
+  ];
 
-    //function to generate tweet <article> that returns the HTML structure
+
+
+  //function to generate tweet <article> that returns the HTML structure
   const createTweetElement = function(tweetObj) {
     //create the <article> (html structure) for the tweet
     const $tweet = $(`<article class="tweet">
@@ -40,12 +55,25 @@ $(document).ready(function() {
             </div>
           </footer>
         </article>`);
-  
-        return $tweet;
-  }
+    
+    //returning the tweet html
+    return $tweet;
+  };
 
-  //calling function createTweetElement and passing tweetData as an argument
-  const $tweet = createTweetElement(tweetData);
+
+
+  const renderTweets = function(tweetArr) {
+    //setting a container where the tweets will be pushed into
+    let $tweets = [];
+    //loop through arr of tweets Object
+    for (const tweetObj of tweetArr) {
+    //calling createTweetElement on each object to apply the html structure to the tweet
+      $tweets.push(createTweetElement(tweetObj));
+    }
+    return $tweets;
+  };
+
   //append the html structure to id tweet-container from index.html
-  $("#tweet-container").append($tweet);
+  const $tweets = renderTweets(tweetArr);
+  $("#tweet-container").append($tweets);
 });
