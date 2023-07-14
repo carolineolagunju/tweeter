@@ -4,15 +4,15 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function() {
+$(document).ready(function () {
 
   //function to display tweet time
-  const formatTimestamp = function(timestamp) {
+  const formatTimestamp = function (timestamp) {
     return timeago.format(timestamp);
   };
 
   //function to generate tweet <article> that returns the HTML structure of individual tweet
-  const createTweetElement = function(tweetObj) {
+  const createTweetElement = function (tweetObj) {
     //create the <article> (html structure) for the tweet
     const $tweet = $(`<article class="tweet">
           <header>
@@ -33,7 +33,7 @@ $(document).ready(function() {
             </div>
           </footer>
         </article>`);
-    
+
     //returning the tweet html
     return $tweet;
   };
@@ -41,44 +41,66 @@ $(document).ready(function() {
 
 
   //function to render tweets
-  const renderTweets = function(tweetArr) {
+  const renderTweets = function (tweetArr) {
     $("#tweet-container").empty();
     //loop through arr of tweets Object
     for (const singleTweet of tweetArr) {
-    //calling createTweetElement on each object
-    const tweet = createTweetElement(singleTweet);
-    //append the tweet to the tweet container 
-    $("#tweet-container").prepend(tweet);
+      //calling createTweetElement on each object
+      const tweet = createTweetElement(singleTweet);
+      //append the tweet to the tweet container 
+      $("#tweet-container").prepend(tweet);
     }
   };
 
 
 
+  //check if tweet is empty or over 140 characters
+  const tweetLength = () => {
+    const tweetText = $(".new-tweet textarea").val();
+    if (tweetText === '' || tweetText === null) {
+      alert("Tweet cannot be empty");
+      return false;
+    } else if (tweetText.length > 140) {
+      alert("Tweet content is too long");
+      return false;
+    } else {
+      return true;
+    }
+  };
+
   //post request to /tweets 
-  $(".post-tweet").on("submit", function(event) {
-    //serilizing the tweet content
-    const tweet = $(".post-tweet").serialize();
-    $.post("/tweets", tweet).then(() => {
-      loadTweets();
-    });
+  $(".post-tweet").on("submit", function (event) {
     //prevent page from reloading
     event.preventDefault();
+    
+    const isTweetValid = tweetLength();
+    if (isTweetValid) {
+      //serilizing the tweet content
+      const tweet = $(".post-tweet").serialize();
+      $.post("/tweets", tweet).then(() => {
+        //clear the text area after submitting a tweet
+        $("#tweet-text").val("");
+        // $(".counter").text(140);
+        loadTweets();
+      });
+    }
   });
 
 
 
   //get request route to /tweets 
-  const loadTweets = function() {
+  const loadTweets = function () {
     $.ajax({
       url: "/tweets",
       method: "GET",
-      success: function(data) {
+      success: function (data) {
         renderTweets(data);
       },
-      error: function(err) {
+      error: function (err) {
         console.log(err);
       }
     });
   };
   loadTweets();
+
 });
