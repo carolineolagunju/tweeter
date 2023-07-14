@@ -6,6 +6,11 @@
 
 $(document).ready(function() {
 
+  //function to display tweet time
+  const formatTimestamp = function(timestamp) {
+    return timeago.format(timestamp);
+  };
+
   //function to generate tweet <article> that returns the HTML structure of individual tweet
   const createTweetElement = function(tweetObj) {
     //create the <article> (html structure) for the tweet
@@ -20,7 +25,7 @@ $(document).ready(function() {
           <p>${tweetObj.content.text}</p>
           <hr>
           <footer class="footer">
-            <span>${tweetObj.created_at}</span>
+            <span>${formatTimestamp(tweetObj.created_at)}</span>
             <div class="icons">
               <i class="fa-solid fa-flag"></i>
               <i class="fa-sharp fa-solid fa-retweet"></i>
@@ -59,6 +64,7 @@ $(document).ready(function() {
     //prevent page from reloading
     event.preventDefault();
   });
+
 
 
   //get request route to /tweets 
