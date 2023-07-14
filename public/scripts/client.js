@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 
 
-  //function to generate tweet <article> that returns the HTML structure
+  //function to generate tweet <article> that returns the HTML structure of individual tweet
   const createTweetElement = function(tweetObj) {
     //create the <article> (html structure) for the tweet
     const $tweet = $(`<article class="tweet">
@@ -61,6 +61,7 @@ $(document).ready(function() {
   };
 
 
+    //function to render tweets
   const renderTweets = function(tweetArr) {
     //loop through arr of tweets Object
     for (const singleTweet of tweetArr) {
@@ -70,5 +71,24 @@ $(document).ready(function() {
     $("#tweet-container").append(tweet);
     }
   };
+  //render tweet called
   renderTweets(tweetArr);
+
+
+    //function to submit a POST request that sends the serialized data to the server
+  const postTweet = function() {
+    //serilizing the tweet content
+    const tweet = $(".post-tweet").serialize();
+    $.post("/tweets", tweet).then(() => {
+      renderTweets();
+    });
+  }
+
+  //post request to 
+  $(".post-tweet").on("submit", function(event) {
+    //prevent page from reloading
+    event.preventDefault();
+    //call function postTweet to send serialized data to server
+    postTweet();
+  });
 });

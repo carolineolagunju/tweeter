@@ -18,7 +18,7 @@
     <!--Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -51,7 +51,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
+        <form class="post-tweet" action="/tweets" method="POST">
           <label class="tweet" for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div class="count">
@@ -59,7 +59,7 @@
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form><br>
-      <!-- This section/article contains individual tweets -->
+      <!-- This section contains individual tweets -->
       </section>
       <section id="tweet-container" class="tweet-container">
       </section>
