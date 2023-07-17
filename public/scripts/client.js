@@ -21,6 +21,7 @@ $(document).ready(function() {
   };
 
 
+
   //function to generate tweet <article> that returns the HTML structure of individual tweet
   const createTweetElement = function(tweetObj) {
     //create the <article> (html structure) for the tweet
@@ -67,16 +68,30 @@ $(document).ready(function() {
   //check if tweet is empty or over 140 characters
   const tweetLength = () => {
     const tweetText = $(".new-tweet textarea").val();
+
     if (tweetText === '' || tweetText === null) {
-      alert("Tweet cannot be empty");
+      //empties any existing error msg
+      $(".error-msg1").empty();
+      //display error msg if input is empty
+      $(".error-msg1").hide().delay().slideDown().append("⚠ Tweet cannot be empty!");
       return false;
+
     } else if (tweetText.length > 140) {
-      alert("Tweet content is too long");
+      //empties any existing error msg
+      $(".error-msg1").empty();
+      //display error msg if input is >140
+      $(".error-msg1").hide().delay().slideDown().append("⚠ Tweet content is too long, keyword must be no longer than 140 characters!");
       return false;
+
     } else {
+      //empties any existing error msg
+      $(".error-msg1").empty();
       return true;
     }
   };
+
+
+
 
   //post request to /tweets
   $(".post-tweet").on("submit", function(event) {

@@ -7,7 +7,7 @@
 }
 
 .button {
-  background-color: navy;
+  background-color: #001a80;
   color: #FFFFFF;
 }
 
@@ -49,11 +49,11 @@ section article.tweet {
   border: 3px solid;
   padding: 20px;
   margin: 30px 0px;
+  word-wrap: break-word;
 }
 
 section article.tweet:hover {
   box-shadow: 4px 4px 4px grey;
-
 }
 
 article > header, footer {
@@ -100,4 +100,14 @@ div.icons i:hover {
 .username {
   opacity: .6;
   color: skyblue;
+}
+
+.error-msg1 {
+  color: red;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  border-color: red;
+  width: fit-content;
 }
