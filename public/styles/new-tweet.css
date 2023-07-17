@@ -104,10 +104,8 @@ div.icons i:hover {
 
 .error-msg1 {
   color: red;
-  display: flex;
-  justify-content: center;
+  display: none;
   font-size: 14px;
   font-weight: 600;
-  border-color: red;
   width: fit-content;
 }

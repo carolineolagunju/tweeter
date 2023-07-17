@@ -70,6 +70,7 @@ $(document).ready(function() {
     const tweetText = $(".new-tweet textarea").val();
 
     if (tweetText === '' || tweetText === null) {
+
       //empties any existing error msg
       $(".error-msg1").empty();
       //display error msg if input is empty
@@ -85,7 +86,7 @@ $(document).ready(function() {
 
     } else {
       //empties any existing error msg
-      $(".error-msg1").empty();
+      $(".error-msg1").slideUp();
       return true;
     }
   };
