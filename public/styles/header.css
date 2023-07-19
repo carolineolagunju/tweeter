@@ -7,4 +7,5 @@ body > header {
   padding-top: 150px;
   background-image: url("/images/cutcube.png");
   background-color: orange;
+  margin-bottom: 20px;
 }

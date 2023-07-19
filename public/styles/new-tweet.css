@@ -111,14 +111,13 @@ article > footer {
 
 div.icons i {
   padding: 6px;
+
+  &:hover {
+    color: orangered;
+  }
 }
 
 
 footer div.icons {
   display: flex;
-}
-
-
-div.icons i:hover {
-  color: orangered;
 }
