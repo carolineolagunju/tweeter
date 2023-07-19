@@ -36,15 +36,15 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="nav">
       <span>tweeter</span>
       <div class="newTweet">
-      <span><b>Write</b> a new tweet</span>
-      <i class="fa-solid fa-angles-down fa-bounce" style="color: #fb0404;"></i>
-    </div>
+        <span><b>Write</b> a new tweet</span>
+        <i class="fa-solid fa-angles-down fa-bounce" style="color: #fb0404;"></i>
+      </div>
     </nav>
     <!-- header (centered) -->
-    <header>
+    <header class="header">
         <div>
           <img src="/images/profile-hex.png" alt="profile picture"> 
         </div>
@@ -56,7 +56,6 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <span class="error-msg1"></span>
         <form class="post-tweet" action="/tweets" method="POST">
           <label class="tweet" for="tweet-text">What are you humming about?</label>
