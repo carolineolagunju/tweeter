@@ -45,7 +45,7 @@ $(document).ready(function() {
           </footer>
         </article>`);
 
-    //returning the tweet html
+    //returning the tweet
     return $tweet;
   };
 
@@ -90,7 +90,6 @@ $(document).ready(function() {
       return true;
     }
   };
-
 
 
 
