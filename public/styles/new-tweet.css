@@ -1,3 +1,30 @@
+/* styling for textarea */
+.tweet {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+
+#tweet-text {
+  display: flex;
+  justify-content: center;
+  border: none;
+  border-bottom: solid black;
+  outline: none;
+  width: 100%;
+  bottom: 0;
+  font-size: 15px;
+  font-weight: 700;
+  background-color: inherit;
+}
+
+
+.button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+
+
 .count {
   display: flex;
   justify-content: space-between;
@@ -6,60 +33,39 @@
   padding-top: 20px;
 }
 
-.button {
-  background-color: #001a80;
-  color: #FFFFFF;
-}
-
-.button:hover {
-  border-color: #0088ff;
-}
-
-#tweet-text {
-  display: flex;
-  justify-content: center;
-  border: none;
-  border-bottom: solid black;
-  outline: none;
-  width: 90vw;
-  bottom: 0;
-  font-size: 15px;
-  font-weight: 700;
-  background-color: inherit;
-}
-
-.tweet {
-  font-size: 19px;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 25px;
-}
-
+/* counter color when its more than 140 character */
 .counterRed {
   color: red;
 }
 
+
+/* counter color when its within 140 character */
 .counterBlack {
   color: black;
 }
 
-section article.tweet {
-  border: 3px solid;
-  padding: 20px;
-  margin: 30px 0px;
-  word-wrap: break-word;
+
+/* styling for validation error msg */
+.error-msg1 {
+  color: red;
+  display: flex;
+  font-size: 14px;
+  font-weight: 600;
+  width: fit-content;
 }
 
+
+/* style for individual tweet */
 section article.tweet:hover {
   box-shadow: 4px 4px 4px grey;
 }
+
 
 article > header, footer {
   display: flex;
   justify-content: space-between;
 }
+
 
 article > header > span {
   display: flex; 
@@ -68,10 +74,20 @@ article > header > span {
   gap: 10px;
 }
 
-article > hr {
-  height: 2px;
-  background-color: black;
+
+.username {
+  opacity: .6;
+  color: skyblue;
 }
+
+
+section article.tweet {
+  border: 3px solid;
+  padding: 20px;
+  margin: 30px 0px;
+  word-wrap: break-word;
+}
+
 
 article > p {
   padding-top: 20px;
@@ -79,33 +95,30 @@ article > p {
   font-size: 16px;
 }
 
+
+article > hr {
+  height: 2px;
+  background-color: black;
+}
+
+
 article > footer {
   padding-left: 20px;
   padding-right: 20px;
   font-size: 14px;
 }
 
-footer div.icons {
-  display: flex;
-}
 
 div.icons i {
   padding: 6px;
 }
 
+
+footer div.icons {
+  display: flex;
+}
+
+
 div.icons i:hover {
   color: orangered;
-}
-
-.username {
-  opacity: .6;
-  color: skyblue;
-}
-
-.error-msg1 {
-  color: red;
-  display: none;
-  font-size: 14px;
-  font-weight: 600;
-  width: fit-content;
 }
