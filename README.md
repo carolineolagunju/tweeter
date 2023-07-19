@@ -7,7 +7,7 @@ It allows user to compose tweet in real time.
 It is built with a responsive design where, if a user shrinks down the page width to below 1024px, the layout switches
 from a two-column layout to a one-column layout.
 
-See screen-shots below for page layout on both destop and mobile as well as error messages for when tweet is empty or too long. 
+See screen-shots below for page layout on both desktop and mobile as well as error messages for when tweet is empty or too long. 
 
 ## Final Product
 !["screenshot of empty tweet"](/docs/Screenshot%202023-07-19%20101043.png)
