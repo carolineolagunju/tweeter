@@ -10,11 +10,25 @@ from a two-column layout to a one-column layout.
 See screen-shots below for page layout on both desktop and mobile as well as error messages for when tweet is empty or too long. 
 
 ## Final Product
-!["screenshot of empty tweet"](/docs/empty-tweet.png)
 !["screenshot of too long tweet"](/docs/long-tweet.png)
-!["screenshot of new tweet on a mobile or tablet"](/docs/new-tweet.png)
-!["screenshot of page layout on a mobile or tablet"](/docs/mobile-layout.png)
+
+screenshot of a too long tweet with an error message
+
 !["screenshot of page layout on a desktop"](/docs/desktop-layout.png)
+
+screenshot of page layout on a desktop
+
+!["screenshot of empty tweet"](/docs/empty-tweet.png)
+
+screenshot of empty tweet with error message
+
+!["screenshot of new tweet on a mobile or tablet"](/docs/new-tweet.png)
+
+screenshot of a new tweet on a mobile or tablet
+
+!["screenshot of page layout on a mobile or tablet"](/docs/mobile-layout.png)
+
+screenshot of the page layout on a mobile or tablet
 
 ## Getting Started
 
