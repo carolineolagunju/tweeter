@@ -67,7 +67,7 @@ $(document).ready(function() {
 
   //check if tweet is empty or over 140 characters
   const tweetLength = () => {
-    const tweetText = $(".new-tweet textarea").val();
+    const tweetText = $(".new-tweet textarea").val().trim();
 
     if (tweetText === '' || tweetText === null) {
 
